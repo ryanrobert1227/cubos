@@ -8,12 +8,24 @@ import BackgroundImage from "../../components/BackgroundImage/BackgroundImage";
 
 import { LoginStyle } from "./style";
 
+type formularioLogin = {
+  email: string;
+  senha: string;
+};
+
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
+  const [formLogin, setFormLogin] = useState<formularioLogin>({
+    email: "",
+    senha: "",
+  });
+
+  function haddleChangeFormLogin(name: string, value: string) {
+    setFormLogin({ ...formLogin, [name]: value });
+  }
 
   return (
     <LoginStyle>
-      <AsideFaixa></AsideFaixa>
+      <AsideFaixa />
       <div className="left">
         <svg
           className="tittle"
@@ -43,26 +55,28 @@ export default function LoginPage() {
         <span>Use seu e-mail e senha para ter acesso às aulas.</span>
         <form action="/inicio">
           <Input
+            name="email"
             nome="E-mail"
             type="text"
             placeholder="exemplo@email.com"
             margintop="37px"
             mask=""
-            setEmail={setEmail}
+            haddleChangeFormLogin={haddleChangeFormLogin}
           />
           <Input
+            name="senha"
             nome="Senha"
             type="password"
-            placeholder=""
             margintop="28px"
             mask=""
+            haddleChangeFormLogin={haddleChangeFormLogin}
           />
           <InitialButton
             name="acessar"
             width="9.65vw"
             color="#e5007b"
             opacity={1}
-            email={email}
+            email={formLogin.email}
           />
         </form>
         <span className="register">

@@ -5,26 +5,38 @@ import InputMask from "react-input-mask";
 import { InputBoxStyle } from "./style";
 
 interface InputProps {
+  name: string;
   nome: string;
   type: string;
   placeholder?: string;
   margintop: string;
   mask: string;
-  setPassword?: React.Dispatch<React.SetStateAction<string>>;
-  setPassword2?: React.Dispatch<React.SetStateAction<string>>;
-  setEmail?: React.Dispatch<React.SetStateAction<string>>;
+  haddleChangeFormCadastro?: any;
+  haddleChangeFormLogin?: any;
+  haddleChangeFormEsqueceuSenha?: any;
 }
 export default function Input(props: InputProps) {
   const {
+    name,
     nome,
     type,
     placeholder,
     margintop,
     mask,
-    setPassword,
-    setPassword2,
-    setEmail,
+    haddleChangeFormCadastro,
+    haddleChangeFormLogin,
+    haddleChangeFormEsqueceuSenha,
   } = props;
+
+  function haddleResume(e: React.ChangeEvent<HTMLInputElement>) {
+    if (haddleChangeFormCadastro) {
+      haddleChangeFormCadastro(name, e.target.value);
+    } else if (haddleChangeFormLogin) {
+      haddleChangeFormLogin(name, e.target.value);
+    } else if (haddleChangeFormEsqueceuSenha) {
+      haddleChangeFormEsqueceuSenha(name, e.target.value);
+    }
+  }
 
   const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -45,16 +57,11 @@ export default function Input(props: InputProps) {
       {mask === "" ? (
         <>
           <input
+            name={name}
             type={passwordVisible ? "text" : type}
             placeholder={placeholder}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              if (setPassword) {
-                setPassword(e.target.value);
-              } else if (setPassword2) {
-                setPassword2(e.target.value);
-              } else if (setEmail) {
-                setEmail(e.target.value);
-              }
+              haddleResume(e);
             }}
             required
           />

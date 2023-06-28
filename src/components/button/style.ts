@@ -14,7 +14,7 @@ export const InitialButtonStyled = Styled.div<{
 
       height: 6.5vh;
       width: ${width};
-      margin-top: 30px;
+      margin-top: 28px;
 
       font-size: 15px;
       letter-spacing: 0.2px;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// import { useForm } from "react-hook-form";
 
 import { Link } from "react-router-dom";
 
@@ -10,56 +11,63 @@ import Li from "../../components/li/Li";
 
 import { RegistroStyle } from "./style";
 
+type formularioCadastro = {
+  email: string;
+  nomeCompleto: string;
+  celular: string;
+  senha: string;
+  confirmSenha: string;
+  continue: boolean;
+  valid2: boolean;
+};
+
 export default function RegistroPage() {
-  const [isContinue, setIsCotinue] = useState(false);
-  const [email, setEmail] = useState("");
+  const [formCadastro, setFormCadastro] = useState<formularioCadastro>({
+    email: "",
+    nomeCompleto: "",
+    celular: "",
+    senha: "",
+    confirmSenha: "",
+    continue: false,
+    valid2: false,
+  });
 
-  const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [isValid1, setIsValid1] = useState(false);
-  const [isValid2, setIsValid2] = useState(false);
-  const [isValid3, setIsValid3] = useState(false);
+  // const { register, handleSubmit } = useForm<FormData>();
 
-  useEffect(() => {
-    const re = /^(?=.*[A-Za-z])(?=.*[0-9]).*$/i;
+  // function onSubmit(data: any) {
+  //   console.log(data);
+  // }
 
-    if (password.length >= 6) {
-      setIsValid1(true);
-    } else {
-      setIsValid1(false);
-    }
-
-    if (password.match(re)) {
-      setIsValid2(true);
-    } else {
-      setIsValid2(false);
-    }
-  }, [password]);
-
-  useEffect(() => {
-    if (password == password2 && password != "") {
-      setIsValid3(true);
-    } else {
-      setIsValid3(false);
-    }
-  }, [password, password2]);
+  function haddleChangeFormCadastro(name: string, value: string) {
+    setFormCadastro({ ...formCadastro, [name]: value });
+  }
 
   function haddleValidarEmail(email: string) {
     const re = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(com|com\.br)$/;
 
     if (email.match(re)) {
-      setIsCotinue(true);
+      setFormCadastro({ ...formCadastro, continue: true });
       return;
     } else {
       return alert("Digite um Email valido");
     }
   }
-  console.log(password);
+
+  useEffect(() => {
+    if (
+      formCadastro.senha == formCadastro.confirmSenha &&
+      formCadastro.senha != ""
+    ) {
+      setFormCadastro({ ...formCadastro, valid2: true });
+    } else {
+      setFormCadastro({ ...formCadastro, valid2: false });
+    }
+  }, [formCadastro.senha, formCadastro.confirmSenha]);
 
   return (
     <RegistroStyle>
       <AsideFaixa></AsideFaixa>
-      {!isContinue ? (
+      {!formCadastro.continue ? (
         <div className="left">
           <svg
             className="tittle"
@@ -90,34 +98,39 @@ export default function RegistroPage() {
           <strong>Etapa 1 de 2: Dados pessoais</strong>
           <form method="post" autoComplete="on">
             <Input
+              name="email"
               nome="E-mail"
               type="text"
               placeholder="dsaf@gmail.com"
               margintop="17px"
               mask=""
-              setEmail={setEmail}
+              haddleChangeFormCadastro={haddleChangeFormCadastro}
             />
             <Input
+              name="nomeCompleto"
               nome="Nome Completo"
               type="text"
               placeholder="dsafadas dasd fas sadas"
               margintop="14px"
               mask=""
+              haddleChangeFormCadastro={haddleChangeFormCadastro}
             />
             <span className="sub">Ou nome social, caso prefira</span>
             <Input
+              name="celular"
               nome="Celular"
               type="tel"
               margintop="8px"
               mask="(99) 9 9999-9999"
+              haddleChangeFormCadastro={haddleChangeFormCadastro}
             />
-            {email !== "" ? (
+            {formCadastro.email !== "" ? (
               <button
                 className="submit_active"
                 type="submit"
-                onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-                  haddleValidarEmail(email)
-                }
+                onClick={() => {
+                  haddleValidarEmail(formCadastro.email);
+                }}
               >
                 <svg
                   viewBox="0 0 12 6"
@@ -190,34 +203,47 @@ export default function RegistroPage() {
           <strong>Etapa 2 de 2: Dados pessoais</strong>
           <form>
             <Input
+              name="senha"
               nome="Nova senha"
               type="password"
               margintop="18px"
               mask=""
-              setPassword={setPassword}
+              haddleChangeFormCadastro={haddleChangeFormCadastro}
             />
             <Input
+              name="confirmSenha"
               nome="Confirmar nova senha"
               type="password"
               margintop="25px"
               mask=""
-              setPassword2={setPassword2}
+              haddleChangeFormCadastro={haddleChangeFormCadastro}
             />
             <div className="correction">
               <ul>
                 <Li
-                  boolean={isValid1}
+                  boolean={formCadastro.senha.length >= 6}
                   text="A senha deve conter no mínimo 6 caracteres"
                 />
                 <Li
-                  boolean={isValid2}
+                  boolean={
+                    formCadastro.senha.match(/^(?=.*[A-Za-z])(?=.*[0-9]).*$/i)
+                      ? true
+                      : false
+                  }
                   text="A senha deve ser formada por letras e números"
                 />
-                <Li boolean={isValid3} text="As senhas devem corresponder" />
+                <Li
+                  boolean={formCadastro.valid2}
+                  text="As senhas devem corresponder"
+                />
               </ul>
             </div>
             <div className="botoes">
-              {isValid1 && isValid2 && isValid3 ? (
+              {formCadastro.senha.length >= 6 &&
+              (formCadastro.senha.match(/^(?=.*[A-Za-z])(?=.*[0-9]).*$/i)
+                ? true
+                : false) &&
+              formCadastro.valid2 ? (
                 <Link to="/">
                   <InitialButton
                     name="Concluir"
@@ -236,7 +262,9 @@ export default function RegistroPage() {
                 />
               )}
               <button
-                onClick={() => setIsCotinue(false)}
+                onClick={() =>
+                  setFormCadastro({ ...formCadastro, continue: false })
+                }
                 className="volta-etapa"
               >
                 Etapa anterior

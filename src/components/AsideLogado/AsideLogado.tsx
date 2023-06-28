@@ -6,16 +6,15 @@ import imagem_perfil1 from "../../assets/fotoperfil.jpeg";
 import { AsideLogadoStyle } from "./style";
 
 export default function AsideLogado() {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   function haddleToggleIsActive() {
     setIsActive(!isActive);
   }
-  console.log(isActive);
 
   return (
     <AsideLogadoStyle>
-      <Link to="inicio">
+      <Link to="/inicio">
         <svg
           width="24"
           height="24"
@@ -43,7 +42,7 @@ export default function AsideLogado() {
             to="/perfil"
             className="icone"
             style={({ isActive }) => ({
-              color: isActive ? "#d818a5" : "black",
+              color: isActive ? "#d818a5" : "transparent",
             })}
           >
             <svg
@@ -53,14 +52,26 @@ export default function AsideLogado() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M8 10.5C8 8.011 10.011 6 12.5 6S17 8.011 17 10.5 14.989 15 12.5 15C10.01 15 8 12.98 8 10.5zm4.5-3.169a3.17 3.17 0 10.002 6.335 3.17 3.17 0 00-.002-6.335zM6.32 18.546c3.434-3.413 8.98-3.39 12.39.043a.75.75 0 11-1.063 1.057 7.26 7.26 0 00-10.269-.037l-.04.039a.75.75 0 11-1.06-1.06l.042-.043z"
+                fill="#000"
+              ></path>
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M2.5 12c0-5.524 4.476-10 10-10s10 4.476 10 10-4.476 10-10 10-10-4.476-10-10zm10-8.5A8.498 8.498 0 004 12c0 4.696 3.804 8.5 8.5 8.5S21 16.696 21 12s-3.804-8.5-8.5-8.5z"
+                fill="#000"
+              ></path>
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M12.5 7.331a3.17 3.17 0 10.002 6.335 3.17 3.17 0 00-.002-6.335z"
                 fill="currentColor"
               ></path>
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M12.5 2c-5.524 0-10 4.476-10 10s4.476 10 10 10 10-4.476 10-10-4.476-10-10-10zM6.74 18.155l-.048.05c.37.348.773.663 1.201.94a7.26 7.26 0 019.208.003 8.54 8.54 0 001.207-.941 8.452 8.452 0 00-.056-.05l-.05-.041v-.002a8.76 8.76 0 00-11.462.041zM8 10.5C8 8.011 10.011 6 12.5 6S17 8.011 17 10.5 14.989 15 12.5 15A4.5 4.5 0 018 10.5z"
                 fill="currentColor"
               ></path>
@@ -129,20 +140,20 @@ export default function AsideLogado() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M11.078 2.224a2.01 2.01 0 011.846 0l8.404 4.345c.037.02.072.041.104.066a1.248 1.248 0 01-.104 2.155l-8.404 4.343a2.012 2.012 0 01-1.846 0L2.674 8.786a1.249 1.249 0 010-2.217l8.404-4.345zm.68 1.317L3.757 7.677l8.001 4.14a.53.53 0 00.486 0L20.25 7.68l-8.006-4.14a.529.529 0 00-.486 0z"
               fill="#000"
             ></path>
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M6.98 9.5a.74.74 0 01-.318.998l-2.905 1.503 8.001 4.14a.53.53 0 00.486 0L20.245 12 17.34 10.5a.74.74 0 01.681-1.317l3.307 1.711a1.249 1.249 0 010 2.216l-8.404 4.347a2.014 2.014 0 01-1.846 0L2.674 13.11a1.249 1.249 0 010-2.217l3.307-1.71a.74.74 0 01.998.317z"
               fill="#000"
             ></path>
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M6.98 13.822a.74.74 0 01-.319.998l-2.904 1.5 8.001 4.14a.53.53 0 00.486 0l8.001-4.135-2.905-1.505a.74.74 0 01.681-1.316l3.307 1.713a1.248 1.248 0 010 2.216l-8.404 4.343a2.01 2.01 0 01-1.846 0l-8.404-4.348a1.248 1.248 0 010-2.216l3.307-1.708a.74.74 0 01.998.318z"
               fill="#000"
             ></path>

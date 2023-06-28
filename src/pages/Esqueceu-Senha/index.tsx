@@ -8,8 +8,19 @@ import BackgroundImage from "../../components/BackgroundImage/BackgroundImage";
 
 import { PasswordRecoverStyle } from "./style";
 
+type formularioEsqueceuSenha = {
+  email: string;
+};
+
 export default function PasswordRecoverPage() {
-  const [email, setEmail] = useState("");
+  const [formEsqueceuSenha, setFormEsqueceuSenha] =
+    useState<formularioEsqueceuSenha>({
+      email: "",
+    });
+
+  function haddleChangeFormEsqueceuSenha(name: string, value: string) {
+    setFormEsqueceuSenha({ ...formEsqueceuSenha, [name]: value });
+  }
 
   return (
     <PasswordRecoverStyle>
@@ -45,12 +56,13 @@ export default function PasswordRecoverPage() {
         </span>
         <form>
           <Input
+            name="email"
             nome="E-mail"
             type="text"
             placeholder="exemplo@email.com"
             margintop="30px"
             mask=""
-            setEmail={setEmail}
+            haddleChangeFormEsqueceuSenha={haddleChangeFormEsqueceuSenha}
           />
           <div className="botoes">
             <InitialButton
@@ -58,7 +70,7 @@ export default function PasswordRecoverPage() {
               width="15.1vw"
               color="#e5007b"
               opacity={1}
-              email={email}
+              email={formEsqueceuSenha.email}
             />
             <Link to="/" className="volta-login">
               Voltar ao login

@@ -45,6 +45,9 @@ export const InputBoxStyle = styled.div<{ margintop?: string }>((props) => {
       width: 100%;
       padding: 0 17px;
 
+      font-size: 14px;
+      letter-spacing: 0.6px;
+
       &:hover {
         border: solid 1px rgba(0, 0, 0, 0.8);
       }

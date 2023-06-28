@@ -5,6 +5,7 @@ export const AsideLogadoStyle = Styled.aside(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
 
     border-right: 1px solid rgb(223, 224, 225);
 

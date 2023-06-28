@@ -1,1 +1,216 @@
 // nao sei se vou usa mas por enquanto
+
+export const professores: any = [
+  {
+    id: 1,
+    image: "https://ca.slack-edge.com/T085TMJ9J-U085WBEAD-e24310f60aa8-512",
+    nome: "José Messias Jr.",
+    profissao: "Professor de Lógica",
+    link_linkedin: "https://www.linkedin.com/in/josé-messias-jr-7b94a5136/",
+    link_github: "https://github.com/jrsantos18",
+  },
+  {
+    id: 2,
+    image: "https://ca.slack-edge.com/T085TMJ9J-U01Q7NGNZSB-021a5fe1d4a2-512",
+    nome: "Guido Cerqueira",
+    profissao: "Professor de Back-end",
+    link_linkedin: "https://www.linkedin.com/in/guidocerqueira/",
+    link_github: "https://www.linkedin.com/in/guidocerqueira/",
+  },
+  {
+    id: 3,
+    image: "https://ca.slack-edge.com/T085TMJ9J-U01U3MDQZNU-bf06dd869fc1-512",
+    nome: "Daniel Lopes",
+    profissao: "Professor de Back-end e Front-end",
+    link_linkedin:
+      "https://www.linkedin.com/in/daniel-de-andrade-lopes-5242b4b1/",
+    link_github:
+      "https://www.linkedin.com/in/daniel-de-andrade-lopes-5242b4b1/",
+  },
+];
+
+type AlunosType = {
+  id: number;
+  nome: string;
+  imagem: string;
+};
+
+export const alunos: AlunosType[] = [
+  {
+    id: 1,
+    nome: "Ana Beatriz",
+    imagem:
+      "https://static.cubos.academy/images/2a9f31538cebb9be0dab5755ecab6061e1d45a1cc7c052bbf5bc80bd96acd9be.jpg",
+  },
+  {
+    id: 2,
+    nome: "Bruno Santos",
+    imagem:
+      "https://static.cubos.academy/images/3481dbab30b9f5b4c54c1a0b698a5b560f8c23fcc1a01abda20ee5a4f5f65fd9.jpg",
+  },
+  {
+    id: 3,
+    nome: "Delcimario Alves",
+    imagem:
+      "https://static.cubos.academy/images/bb4f7830a87bc3d7ae23591b8d9aaaf88c1b966fd3c7086ce70718102e8bcd0b.jpg",
+  },
+  {
+    id: 4,
+    nome: "Diogo Evangelista",
+    imagem:
+      "https://static.cubos.academy/images/ffc5a5fe31c30f087c04ba7ec38271031b51986ad5b97b4ca508348ea12d073b.jpg",
+  },
+  {
+    id: 5,
+    nome: "Efraim Celes",
+    imagem:
+      "https://static.cubos.academy/images/2d70325fc568746da18c84d217a4969a0e2429c78141e1fbd8344671e74074ba.jpg",
+  },
+  {
+    id: 6,
+    nome: "Indaleccio Olivo",
+    imagem:
+      "https://static.cubos.academy/images/49027ee0662b8feef1132dd126a14e4df993eb8d26b1bffc3a1cda78d84fe4d1.jpg",
+  },
+  {
+    id: 7,
+    nome: "João Victor Pereira Klõh",
+    imagem:
+      "https://static.cubos.academy/images/062c99c3f277057e8fc536edc0516c64cfa99343373b59ee8915ffa90b65a2a6.jpg",
+  },
+  {
+    id: 8,
+    nome: "Leonardo Hossary",
+    imagem:
+      "https://static.cubos.academy/images/7ae113e483bb85d60cd7602c83b9261c9cea40f1ef93d7b4225e5eed322267ff.jpg",
+  },
+  {
+    id: 9,
+    nome: "Luiz Pedro Alves",
+    imagem:
+      "https://static.cubos.academy/images/4603e941f0bf47dfc9fd4a191f065ee05076fc5c08ef5e625dcd1f9070e7a91a.jpg",
+  },
+  {
+    id: 10,
+    nome: "Patrick da Silva",
+    imagem:
+      "https://static.cubos.academy/images/27a0fe8ddfc80fb8fbf30c13e27e248fde2b498ee23020513e498d50b0c39741.jpg",
+  },
+  {
+    id: 11,
+    nome: "Robson Felipe",
+    imagem:
+      "https://static.cubos.academy/images/8dce9727f04e6fdd9495ef5a823a0c04dfdcc25db9815b12a5885008447faf3a.jpg",
+  },
+  {
+    id: 12,
+    nome: "Ryan Robert",
+    imagem:
+      "https://static.cubos.academy/images/2801687c0ace2d93e56d54536a8f18f6e53d6887b0f0c40dde4428dab3c8a2a4.jpg",
+  },
+  { id: 13, nome: "Camila Barbosa", imagem: "" },
+  { id: 14, nome: "Daniel Lima", imagem: "" },
+  { id: 15, nome: "Laura Castro", imagem: "" },
+  { id: 16, nome: "Miguel Santos", imagem: "" },
+  { id: 17, nome: "Isabela Costa", imagem: "" },
+  { id: 18, nome: "Thiago Pereira", imagem: "" },
+  { id: 19, nome: "Gabriela Alves", imagem: "" },
+  { id: 20, nome: "Luciana Oliveira", imagem: "" },
+  { id: 21, nome: "André Silva", imagem: "" },
+  { id: 22, nome: "Renata Rodrigues", imagem: "" },
+  { id: 23, nome: "Guilherme Costa", imagem: "" },
+  { id: 24, nome: "Carla Santos", imagem: "" },
+  { id: 25, nome: "Felipe Oliveira", imagem: "" },
+  { id: 26, nome: "Larissa Almeida", imagem: "" },
+  { id: 27, nome: "Eduardo Fernandes", imagem: "" },
+  { id: 28, nome: "Patrícia Ribeiro", imagem: "" },
+  { id: 29, nome: "Ricardo Sousa", imagem: "" },
+  { id: 30, nome: "Mariana Carvalho", imagem: "" },
+  { id: 31, nome: "Rodrigo Gomes", imagem: "" },
+  { id: 32, nome: "Natália Barbosa", imagem: "" },
+  { id: 33, nome: "César Lima", imagem: "" },
+  { id: 34, nome: "Manuela Castro", imagem: "" },
+  { id: 35, nome: "Bruno Santos", imagem: "" },
+  { id: 36, nome: "Ana Clara Costa", imagem: "" },
+  { id: 37, nome: "José Pereira", imagem: "" },
+  { id: 38, nome: "Carolina Oliveira", imagem: "" },
+  { id: 39, nome: "Paulo Almeida", imagem: "" },
+  { id: 40, nome: "Gabriela Rodrigues", imagem: "" },
+  { id: 41, nome: "Lucas Costa", imagem: "" },
+  { id: 42, nome: "Mariana Santos", imagem: "" },
+  { id: 43, nome: "Fernando Fernandes", imagem: "" },
+  { id: 44, nome: "Patrícia Carvalho", imagem: "" },
+  { id: 45, nome: "André Gomes", imagem: "" },
+  { id: 46, nome: "Sara Alves", imagem: "" },
+  { id: 47, nome: "Alexandre Oliveira", imagem: "" },
+  { id: 48, nome: "Aline Ribeiro", imagem: "" },
+  { id: 49, nome: "Renato Sousa", imagem: "" },
+  { id: 50, nome: "Júlia Carvalho", imagem: "" },
+  { id: 51, nome: "Carlos Gomes", imagem: "" },
+  { id: 52, nome: "Laura Costa", imagem: "" },
+  { id: 53, nome: "Rafael Pereira", imagem: "" },
+  { id: 54, nome: "Mariana Alves", imagem: "" },
+  { id: 55, nome: "Gustavo Oliveira", imagem: "" },
+  { id: 56, nome: "Carla Sousa", imagem: "" },
+  { id: 57, nome: "Paulo Fernandes", imagem: "" },
+  { id: 58, nome: "Vanessa Ribeiro", imagem: "" },
+  { id: 59, nome: "Leonardo Lima", imagem: "" },
+  { id: 60, nome: "Carolina Castro", imagem: "" },
+  { id: 61, nome: "Ricardo Santos", imagem: "" },
+  { id: 62, nome: "Letícia Barbosa", imagem: "" },
+  { id: 63, nome: "Fábio Lima", imagem: "" },
+  { id: 64, nome: "Nathalia Castro", imagem: "" },
+  { id: 65, nome: "Thiago Costa", imagem: "" },
+  { id: 66, nome: "Isabella Pereira", imagem: "" },
+  { id: 67, nome: "Marcelo Almeida", imagem: "" },
+  { id: 68, nome: "Cristina Oliveira", imagem: "" },
+  { id: 69, nome: "Eduardo Fernandes", imagem: "" },
+  { id: 70, nome: "Gabriela Ribeiro", imagem: "" },
+  { id: 71, nome: "Luiz Sousa", imagem: "" },
+  { id: 72, nome: "Amanda Carvalho", imagem: "" },
+  { id: 73, nome: "Rafael Gomes", imagem: "" },
+  { id: 74, nome: "Juliana Costa", imagem: "" },
+  { id: 75, nome: "Vitor Pereira", imagem: "" },
+  { id: 76, nome: "Luana Alves", imagem: "" },
+  { id: 77, nome: "André Oliveira", imagem: "" },
+  { id: 78, nome: "Tatiana Ribeiro", imagem: "" },
+  { id: 79, nome: "Ricardo Sousa", imagem: "" },
+  { id: 80, nome: "Fernanda Carvalho", imagem: "" },
+  { id: 81, nome: "Lucas Gomes", imagem: "" },
+  { id: 82, nome: "Patrícia Costa", imagem: "" },
+  { id: 83, nome: "Guilherme Pereira", imagem: "" },
+  { id: 84, nome: "Larissa Almeida", imagem: "" },
+  { id: 85, nome: "Eduardo Fernandes", imagem: "" },
+  { id: 86, nome: "Mariana Ribeiro", imagem: "" },
+  { id: 87, nome: "Rodrigo Sousa", imagem: "" },
+  { id: 88, nome: "Aline Costa", imagem: "" },
+  { id: 89, nome: "Gabriel Santos", imagem: "" },
+  { id: 90, nome: "Beatriz Oliveira", imagem: "" },
+  { id: 91, nome: "Jorge Castro", imagem: "" },
+  { id: 92, nome: "Marina Barbosa", imagem: "" },
+  { id: 93, nome: "Alexandre Lima", imagem: "" },
+  { id: 94, nome: "Lívia Castro", imagem: "" },
+  { id: 95, nome: "Ricardo Almeida", imagem: "" },
+  { id: 96, nome: "Camila Sousa", imagem: "" },
+  { id: 97, nome: "Renato Fernandes", imagem: "" },
+  { id: 98, nome: "Fernanda Ribeiro", imagem: "" },
+  { id: 99, nome: "Gustavo Lima", imagem: "" },
+  { id: 100, nome: "Carolina Costa", imagem: "" },
+  { id: 101, nome: "Pedro Santos", imagem: "" },
+  { id: 102, nome: "Isabela Castro", imagem: "" },
+  { id: 103, nome: "Lucas Barbosa", imagem: "" },
+  { id: 104, nome: "Amanda Lima", imagem: "" },
+  { id: 105, nome: "Marcelo Fernandes", imagem: "" },
+  { id: 106, nome: "Camila Costa", imagem: "" },
+  { id: 107, nome: "Gustavo Ribeiro", imagem: "" },
+  { id: 108, nome: "Larissa Almeida", imagem: "" },
+  { id: 109, nome: "Ricardo Castro", imagem: "" },
+  { id: 110, nome: "Fernanda Sousa", imagem: "" },
+  { id: 111, nome: "João Lima", imagem: "" },
+  { id: 112, nome: "Mariana Oliveira", imagem: "" },
+  { id: 113, nome: "Rafael Fernandes", imagem: "" },
+  { id: 114, nome: "Carolina Costa", imagem: "" },
+  { id: 115, nome: "Vitor Almeida", imagem: "" },
+  { id: 116, nome: "Gabriela Castro", imagem: "" },
+  { id: 117, nome: "Diego Lima", imagem: "" },
+];
